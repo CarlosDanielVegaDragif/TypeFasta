@@ -1,0 +1,60 @@
+using UnityEngine;
+
+public class spanish_words
+{
+    public static string[] words = new string[]
+    {
+        "cuidasteis",
+        "tistearon",
+        "apelmazaren",
+        "contrapasamos",
+        "emblematizando",
+        "acantararan",
+        "macollasen",
+        "taquillasen",
+        "deletreen",
+        "apostemas",
+        "presupuestaseis",
+        "subsuelos",
+        "bachicha",
+        "trapios",
+        "estallido",
+        "ablandar",
+        "subdistingo",
+        "observador",
+        "chapistees",
+        "lincean",
+        "sofalden",
+        "atipujase",
+        "patrocinar",
+        "podrecieres",
+        "templasen",
+        "pirueteasteis",
+        "pervertidas",
+        "escayolabamos",
+        "acollaradas",
+        "imperaria",
+        "arrumare",
+        "reverenciados",
+        "acetificando",
+        "esborregare",
+        "jordanas",
+        "desenvergare",
+        "entrojaramos",
+        "descolonizaste",
+        "toamos",
+        "redactores",
+        "afuman",
+        "turdetano",
+        "desatendiamos",
+        "suspenderemos",
+        "balacees",
+        "urpilas",
+        "enceguezcas",
+        "arrebujabais",
+        "protruian",
+        "escalivad"
+    };
+
+    public static string GetRandomWord() => words[Random.Range(0, words.Length)];
+}

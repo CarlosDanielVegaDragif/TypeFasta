@@ -1,0 +1,60 @@
+using UnityEngine;
+
+public static class english_words
+{
+    public static string[] words = new string[]
+    {
+        "difference",
+        "gap",
+        "benefit",
+        "horseshoe",
+        "company",
+        "artist",
+        "break",
+        "forum",
+        "mosque",
+        "list",
+        "hemisphere",
+        "object",
+        "species",
+        "wrist",
+        "dine",
+        "normal",
+        "branch",
+        "veil",
+        "bet",
+        "terrace",
+        "revolutionary",
+        "collection",
+        "mistreat",
+        "wander",
+        "arrange",
+        "pump",
+        "prospect",
+        "recover",
+        "hold",
+        "sensation",
+        "breathe",
+        "value",
+        "power",
+        "door",
+        "needle",
+        "mechanical",
+        "snail",
+        "breakdown",
+        "helpless",
+        "class",
+        "discreet",
+        "observer",
+        "food",
+        "smash",
+        "crackpot",
+        "qualify",
+        "sheet",
+        "abandon",
+        "support",
+        "indoor"
+    };
+
+    public static string GetRandomWord() => words[Random.Range(0, words.Length)];
+}
