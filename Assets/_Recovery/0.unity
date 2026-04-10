@@ -755,6 +755,7 @@ GameObject:
   - component: {fileID: 222918821}
   - component: {fileID: 222918823}
   - component: {fileID: 222918822}
+  - component: {fileID: 222918824}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -881,6 +882,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222918820}
   m_CullTransparentMesh: 1
+--- !u!114 &222918824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222918820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:4f7d8b5594c72e27f8ffac18fc36a14c
+    m_TableEntryReference:
+      m_KeyId: 57803624448
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &276889306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,7 +1072,7 @@ GameObject:
   - component: {fileID: 281573672}
   - component: {fileID: 281573671}
   m_Layer: 5
-  m_Name: Accuracy_panel
+  m_Name: WWE_panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1084,7 +1113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0.3247619, g: 0.33125713, b: 0.341, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1161,7 +1190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0.3247619, g: 0.33125713, b: 0.341, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1185,17 +1214,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316679335}
   m_CullTransparentMesh: 1
---- !u!114 &352233375 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2013632951911119107, guid: 392c3d9069071db8a80d53da2e0d5f30, type: 3}
-  m_PrefabInstance: {fileID: 54873297}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3470d66b4d6d1613cbce9671f344f7fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WordsManager
 --- !u!1 &458660112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +1302,7 @@ GameObject:
   - component: {fileID: 546026119}
   - component: {fileID: 546026121}
   - component: {fileID: 546026120}
+  - component: {fileID: 546026122}
   m_Layer: 5
   m_Name: desc
   m_TagString: Untagged
@@ -1410,6 +1429,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 546026118}
   m_CullTransparentMesh: 1
+--- !u!114 &546026122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546026118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:4f7d8b5594c72e27f8ffac18fc36a14c
+    m_TableEntryReference:
+      m_KeyId: 1130475900928
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 546026122}
+        m_TargetAssemblyTypeName: UnityEngine.Localization.Components.LocalizeStringEvent,
+          Unity.Localization
+        m_MethodName: RefreshString
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &591353420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,16 +1881,11 @@ MonoBehaviour:
   panelLobby: {fileID: 1744741924}
   btnHost: {fileID: 1080937041}
   localPlayerNameText: {fileID: 79230146}
-  quitButton: {fileID: 1072959285}
   btnInvite: {fileID: 626359035}
   btnStartGame: {fileID: 591353422}
   btnLeave: {fileID: 1445399712}
   playerCountText: {fileID: 1001205495}
   lobbyStatusText: {fileID: 1316858332}
-  _words_per_minute_key: WPM
-  _accuracy_key: Accuracy
-  wpmText: {fileID: 927640846}
-  accuracyText: {fileID: 1598893811}
 --- !u!1 &775666914
 GameObject:
   m_ObjectHideFlags: 0
@@ -2160,6 +2215,7 @@ GameObject:
   - component: {fileID: 891861289}
   - component: {fileID: 891861291}
   - component: {fileID: 891861290}
+  - component: {fileID: 891861292}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2286,6 +2342,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891861288}
   m_CullTransparentMesh: 1
+--- !u!114 &891861292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891861288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:4f7d8b5594c72e27f8ffac18fc36a14c
+    m_TableEntryReference:
+      m_KeyId: 199734677504
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &927640844
 GameObject:
   m_ObjectHideFlags: 0
@@ -2343,7 +2427,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 90
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ba2fd1b664a212b28410ae237eff69a, type: 2}
   m_sharedMaterial: {fileID: -763502509476744929, guid: 3ba2fd1b664a212b28410ae237eff69a, type: 2}
@@ -2813,6 +2897,7 @@ GameObject:
   - component: {fileID: 1200166029}
   - component: {fileID: 1200166031}
   - component: {fileID: 1200166030}
+  - component: {fileID: 1200166032}
   m_Layer: 5
   m_Name: desc
   m_TagString: Untagged
@@ -2859,7 +2944,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: accuracy
+  m_text: words w/o error
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ba2fd1b664a212b28410ae237eff69a, type: 2}
   m_sharedMaterial: {fileID: -763502509476744929, guid: 3ba2fd1b664a212b28410ae237eff69a, type: 2}
@@ -2939,6 +3024,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200166028}
   m_CullTransparentMesh: 1
+--- !u!114 &1200166032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200166028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:4f7d8b5594c72e27f8ffac18fc36a14c
+    m_TableEntryReference:
+      m_KeyId: 1220586328064
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1212764274
 GameObject:
   m_ObjectHideFlags: 0
@@ -3165,7 +3278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ef3b69852492e259d1105616cbfe9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LanguageSelector
-  _wordsManager: {fileID: 352233375}
   languageNameText: {fileID: 1449876096}
   btnPrevious: {fileID: 629670788}
   btnNext: {fileID: 1829367244}
@@ -3503,7 +3615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0.39215687, g: 0.4, b: 0.4117647, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3865,7 +3977,7 @@ GameObject:
   - component: {fileID: 1598893812}
   - component: {fileID: 1598893811}
   m_Layer: 5
-  m_Name: accuracy
+  m_Name: wwe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3910,7 +4022,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0%
+  m_text: 12
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ba2fd1b664a212b28410ae237eff69a, type: 2}
   m_sharedMaterial: {fileID: -763502509476744929, guid: 3ba2fd1b664a212b28410ae237eff69a, type: 2}

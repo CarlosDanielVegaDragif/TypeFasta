@@ -1,5 +1,5 @@
 using UnityEngine;
-using TMPro;
+using System.Linq;
 using Mirror;
 
 #if UNITY_EDITOR
@@ -7,80 +7,58 @@ using UnityEditor;
 #endif
 
 /// <summary>
-/// WordsManager adaptado para Mirror.
-/// 
-/// IMPORTANTE: En la versión online, WordsManager NO maneja wordText directamente
-/// porque cada jugador tiene su propia palabra (via SyncVar en NetworkPlayerController).
-/// wordText puede quedar como referencia opcional para el host o para una pantalla de debug.
-/// 
-/// Solo el SERVIDOR llama a GetRandomWord() — nunca el cliente directamente.
+/// WordsManager actualizado para usar LanguageData ScriptableObjects.
+/// Arrastra todos tus assets de idioma en el Inspector.
+/// Solo el servidor llama GetRandomWord() — nunca el cliente directamente.
 /// </summary>
 public class WordsManager : NetworkBehaviour
 {
     public static WordsManager Instance { get; private set; }
 
-    [Header("Idioma")]
-    public string currentLanguage = "english"; // "english" o "spanish"
-
-    [Header("UI opcional (debug / pantalla del host)")]
-    public TMP_Text wordText; // Puede dejarse null en la versión online
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    [Header("Idiomas disponibles")]
+    [Tooltip("Arrastra aca todos los LanguageData assets que quieras incluir")]
+    public LanguageData[] languages;
 
     /// <summary>
-    /// Devuelve una palabra aleatoria del idioma indicado.
-    /// Debe llamarse SOLO desde el servidor (desde NetworkPlayerController o NetworkGameManager).
+    /// Devuelve una palabra aleatoria del idioma indicado por languageID.
+    /// Llamar solo desde el servidor.
     /// </summary>
-    public string GetRandomWord(string language)
+    public string GetRandomWord(string languageID)
     {
-        switch (language)
+        var lang = languages.FirstOrDefault(l => l.languageID == languageID);
+
+        if (lang == null)
         {
-            case "english":
-                return english_words.GetRandomWord();
-            case "spanish":
-                return spanish_words.GetRandomWord();
-            default:
-                Debug.LogError("[WordsManager] Idioma no soportado: " + language);
-                return "error";
+            Debug.LogWarning($"[WordsManager] Idioma '{languageID}' no encontrado. Usando el primero disponible.");
+            lang = languages.FirstOrDefault();
         }
+
+        return lang != null ? lang.GetRandomWord() : "error";
     }
+
+    /// <summary>Devuelve todos los idiomas disponibles (para poblar el dropdown en la UI).</summary>
+    public LanguageData[] GetAvailableLanguages() => languages;
 }
 
-// -----------------------------------------------------------------------
-// Editor helper (sin cambios respecto al original)
-// -----------------------------------------------------------------------
 #if UNITY_EDITOR
 [CustomEditor(typeof(WordsManager))]
 public class WordsManagerEditor : Editor
 {
+    private string _testLanguageID = "english";
+
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
         WordsManager manager = (WordsManager)target;
 
-        if (GUILayout.Button("Get Random English Word"))
-        {
-            string word = manager.GetRandomWord("english");
-            Debug.Log("English word: " + word);
-            if (manager.wordText != null) manager.wordText.text = word;
-        }
+        EditorGUILayout.Space();
+        EditorGUILayout.LabelField("Debug", EditorStyles.boldLabel);
+        _testLanguageID = EditorGUILayout.TextField("Language ID", _testLanguageID);
 
-        if (GUILayout.Button("Get Random Spanish Word"))
+        if (GUILayout.Button("Get Random Word"))
         {
-            string word = manager.GetRandomWord("spanish");
-            Debug.Log("Spanish word: " + word);
-            if (manager.wordText != null) manager.wordText.text = word;
+            string word = manager.GetRandomWord(_testLanguageID);
+            Debug.Log($"[WordsManager] {_testLanguageID}: {word}");
         }
     }
 }

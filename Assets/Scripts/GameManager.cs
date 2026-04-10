@@ -4,11 +4,6 @@ using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 
-/// <summary>
-/// Debe estar en un prefab registrado en el NetworkManager como Spawnable Prefab.
-/// El servidor lo spawnea automaticamente al cargar la escena InGame.
-/// Asi Mirror le da correctamente la autoridad de servidor.
-/// </summary>
 public class GameManager : NetworkBehaviour
 {
     public static GameManager Instance { get; private set; }
@@ -98,10 +93,6 @@ public class GameManager : NetworkBehaviour
     // Control de partida
     // ------------------------------------------------------------------
 
-    /// <summary>
-    /// Llamar desde el boton del host. Como el host ES el servidor,
-    /// puede llamar metodos [Server] directamente.
-    /// </summary>
     public void StartGame()
     {
         // Guardia: solo el servidor ejecuta la logica
@@ -150,7 +141,7 @@ public class GameManager : NetworkBehaviour
         foreach (var p in _players)
             if (p.Score > topScore) { topScore = p.Score; winner = p; }
 
-        RpcAnnounceWinner(winner != null ? winner.playerName : "Nadie", topScore);
+        RpcAnnounceWinner(winner != null ? winner.playerName : "None", topScore);
     }
 
     // ------------------------------------------------------------------
@@ -191,8 +182,8 @@ public class GameManager : NetworkBehaviour
     private void RpcAnnounceWinner(string winnerName, int score)
     {
         if (gameStateText != null)
-            gameStateText.text = $"Gano {winnerName} con {score} puntos!";
-        Debug.Log($"[Client] Ganador: {winnerName} con {score} pts");
+            gameStateText.text = $"Won {winnerName} with {score} points!";
+        Debug.Log($"[Client] Winner: {winnerName} with {score} pts");
     }
 
     // ------------------------------------------------------------------
@@ -214,9 +205,9 @@ public class GameManager : NetworkBehaviour
         if (gameStateText != null)
             gameStateText.text = newState switch
             {
-                GameState.WaitingForPlayers => "Esperando jugadores...",
-                GameState.InGame            => "En juego!",
-                GameState.GameOver          => "Fin de la partida",
+                GameState.WaitingForPlayers => "Waiting for players...",
+                GameState.InGame            => "In game!",
+                GameState.GameOver          => "Game Over!",
                 _                           => ""
             };
     }
